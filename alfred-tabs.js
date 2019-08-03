@@ -50,7 +50,8 @@ if (program.query) {
     if (program.args) {
       tabs = tabs.filter(function (tab) {
         return _.all(program.args, function (arg) {
-          return tab.title.toLowerCase().indexOf(arg.toLowerCase()) !== -1;
+          return tab.title.toLowerCase().indexOf(arg.toLowerCase()) !== -1 ||
+                 tab.url.toLowerCase().indexOf(arg.toLowerCase()) !== -1;
         });
       });
     }
